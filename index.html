@@ -22,6 +22,7 @@
                 <div class="nav-links">
                     <a href="#products" class="nav-link">Products</a>
                     <a href="#about" class="nav-link">About</a>
+                    <a href="#terms" class="nav-link">Terms</a>
                     <a href="#contact" class="nav-link">Contact</a>
                     <button class="cart-btn" id="cartBtn">
                         <span class="cart-icon">🛒</span>
@@ -143,6 +144,100 @@
         </div>
     </section>
 
+    <!-- Terms & Conditions Section -->
+    <section class="terms" id="terms">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Terms & <span class="gradient-text">Conditions</span></h2>
+                <p class="section-subtitle">Please read our policies carefully before placing an order</p>
+            </div>
+            <div class="terms-content">
+                <div class="terms-grid">
+                    <div class="term-card">
+                        <div class="term-icon">🚫</div>
+                        <h3>No Cancellation Policy</h3>
+                        <p>Once an order is placed and confirmed, it <strong>cannot be cancelled</strong>. All our robots are pre-programmed specifically for your order. Please ensure you review all details before confirming your purchase.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">💰</div>
+                        <h3>Full Payment Required</h3>
+                        <p>Payment must be made <strong>in full via bKash</strong> before the product is shipped. We do not offer cash on delivery or partial payment options. Your order will be processed only after payment confirmation.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">📦</div>
+                        <h3>Delivery Charges</h3>
+                        <p><strong>Inside Dhaka:</strong> ৳60-100 (Standard)<br>
+                        <strong>Outside Dhaka:</strong> ৳120-200 (Based on location)<br>
+                        <strong>Express Delivery:</strong> Additional ৳150-300<br>
+                        All delivery charges must be paid by the customer.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">⏱️</div>
+                        <h3>Delivery Timeframe</h3>
+                        <p><strong>Standard Delivery:</strong> 3-5 business days<br>
+                        <strong>Express Delivery:</strong> 1-2 business days<br>
+                        Delivery times may vary based on location and product availability. We will inform you of any delays.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">✅</div>
+                        <h3>Product Inspection</h3>
+                        <p>You must <strong>inspect the product at the time of delivery</strong> in front of the delivery person. Once accepted, we cannot entertain claims for physical damage or missing components. Video unboxing is recommended.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">🔄</div>
+                        <h3>Return & Exchange</h3>
+                        <p><strong>No returns or exchanges</strong> after delivery acceptance. If the product arrives damaged or defective, it must be reported immediately during delivery inspection. We offer replacement only for manufacturing defects within 48 hours.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">🛡️</div>
+                        <h3>Warranty</h3>
+                        <p><strong>7-day warranty</strong> covers manufacturing defects only. Warranty does not cover physical damage, water damage, or misuse. Battery and consumable parts are not covered under warranty.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">🔧</div>
+                        <h3>Technical Support</h3>
+                        <p>Free technical support via phone/WhatsApp for 30 days. We provide guidance on operation and basic troubleshooting. On-site support available at additional charges based on location.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">📝</div>
+                        <h3>Order Confirmation</h3>
+                        <p>We will call you within <strong>2-4 hours</strong> of order placement to confirm details and arrange payment. If we cannot reach you within 24 hours, your order will be automatically cancelled.</p>
+                    </div>
+
+                    <div class="term-card">
+                        <div class="term-icon">⚖️</div>
+                        <h3>Legal Terms</h3>
+                        <p>By placing an order, you agree to all terms and conditions. Robot Banao BD reserves the right to modify prices and policies without prior notice. All disputes will be resolved as per Bangladesh law.</p>
+                    </div>
+                </div>
+
+                <div class="important-notice">
+                    <div class="notice-header">
+                        <span class="notice-icon">⚠️</span>
+                        <h3>Important Notice</h3>
+                    </div>
+                    <ul class="notice-list">
+                        <li>All prices are in Bangladeshi Taka (৳) and subject to change without notice</li>
+                        <li>Product images are for reference only; actual products may vary slightly</li>
+                        <li>Robots are pre-programmed and tested; modifications void warranty</li>
+                        <li>Customer is responsible for proper handling and maintenance</li>
+                        <li>We are not responsible for competition results or performance outcomes</li>
+                        <li>Battery charging and safety guidelines must be followed strictly</li>
+                        <li>Keep your order ID safe for all future communications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -191,8 +286,8 @@
                     <div class="footer-section">
                         <h4>Company</h4>
                         <a href="#about">About Us</a>
+                        <a href="#terms">Terms & Conditions</a>
                         <a href="#contact">Contact</a>
-                        <a href="#products">Pricing</a>
                     </div>
                 </div>
             </div>
@@ -288,6 +383,31 @@
                             <label for="notes">Special Instructions (Optional)</label>
                             <textarea id="notes" name="notes" rows="3" placeholder="Any special delivery instructions..."></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="deliveryType">Delivery Type *</label>
+                            <select id="deliveryType" name="deliveryType" required>
+                                <option value="">Select delivery type</option>
+                                <option value="standard-dhaka">Standard - Inside Dhaka (৳60-100, 3-5 days)</option>
+                                <option value="standard-outside">Standard - Outside Dhaka (৳120-200, 3-5 days)</option>
+                                <option value="express-dhaka">Express - Inside Dhaka (৳150-250, 1-2 days)</option>
+                                <option value="express-outside">Express - Outside Dhaka (৳300-400, 1-2 days)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section terms-acceptance">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                            <label for="acceptTerms" class="checkbox-label">
+                                I have read and agree to the <a href="#terms" target="_blank" class="terms-link">Terms & Conditions</a> including:
+                                <ul class="terms-highlights">
+                                    <li>No cancellation policy</li>
+                                    <li>Full payment required before delivery</li>
+                                    <li>Delivery charges apply based on location</li>
+                                    <li>No returns after delivery acceptance</li>
+                                </ul>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="order-summary">
@@ -297,9 +417,12 @@
                             <span>Total Amount:</span>
                             <span class="total-price" id="checkoutTotal">৳0</span>
                         </div>
+                        <div class="delivery-note">
+                            <p>📦 <strong>Note:</strong> Delivery charges will be calculated based on your selected delivery type and confirmed during our call.</p>
+                        </div>
                         <div class="payment-note">
-                            <p>💳 <strong>Payment Method:</strong> bKash</p>
-                            <p>We will call you to arrange payment after you place your order.</p>
+                            <p>💳 <strong>Payment Method:</strong> bKash (Full payment required)</p>
+                            <p>We will call you within 2-4 hours to confirm your order and arrange payment.</p>
                         </div>
                     </div>
 

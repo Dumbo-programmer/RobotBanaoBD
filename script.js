@@ -270,6 +270,13 @@ async function submitOrder(event) {
     const form = event.target;
     const formData = new FormData(form);
     
+    // Check if terms are accepted
+    const termsAccepted = formData.get('acceptTerms');
+    if (!termsAccepted) {
+        showNotification('Please accept the Terms & Conditions', 'error');
+        return;
+    }
+    
     const orderData = {
         customer: {
             name: formData.get('customerName'),
@@ -282,11 +289,13 @@ async function submitOrder(event) {
             district: formData.get('district'),
             postalCode: formData.get('postalCode') || 'N/A'
         },
+        deliveryType: formData.get('deliveryType'),
         items: cart,
         total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
         notes: formData.get('notes') || 'None',
         orderId: generateOrderId(),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        termsAccepted: true
     };
 
     // Show loading state
