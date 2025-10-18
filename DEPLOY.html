@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Guide - Robot Banao BD</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0a0e27;
+            color: #fff;
+        }
+        h1 { color: #00f0ff; }
+        h2 { color: #00f0ff; margin-top: 30px; }
+        .step {
+            background: rgba(26, 31, 58, 0.6);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        code {
+            background: #131832;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #06ffa5;
+        }
+        .cmd {
+            background: #131832;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #00f0ff;
+            overflow-x: auto;
+        }
+        a { color: #00f0ff; }
+        .success { color: #06ffa5; }
+        .warning { color: #ff006e; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Robot Banao BD - Deployment Guide</h1>
+    
+    <div class="step">
+        <h2>Step 1: Test Locally (Optional)</h2>
+        <p>First, make sure you have Node.js installed. Then run:</p>
+        <div class="cmd">npm install</div>
+        <div class="cmd">npm run dev</div>
+        <p>Open <code>http://localhost:8888</code> in your browser.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Create GitHub Repository</h2>
+        <ol>
+            <li>Go to <a href="https://github.com/new" target="_blank">GitHub</a> and create a new repository</li>
+            <li>Name it something like <code>Robot Banao-bd</code></li>
+            <li>Keep it public (required for free Netlify hosting)</li>
+            <li>Don't initialize with README (we already have one)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Push Code to GitHub</h2>
+        <p>Open PowerShell in your project folder and run:</p>
+        <div class="cmd">git init</div>
+        <div class="cmd">git add .</div>
+        <div class="cmd">git commit -m "Initial commit - Robot Banao BD website"</div>
+        <div class="cmd">git branch -M main</div>
+        <div class="cmd">git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git</div>
+        <div class="cmd">git push -u origin main</div>
+        <p class="warning">⚠️ Replace YOUR_USERNAME and YOUR_REPO with your actual GitHub username and repository name!</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Deploy to Netlify</h2>
+        <ol>
+            <li>Go to <a href="https://app.netlify.com" target="_blank">Netlify</a> and sign up/login (use GitHub)</li>
+            <li>Click <strong>"Add new site"</strong> → <strong>"Import an existing project"</strong></li>
+            <li>Choose <strong>"Deploy with GitHub"</strong></li>
+            <li>Select your repository</li>
+            <li>Netlify will auto-detect settings from <code>netlify.toml</code></li>
+            <li>Click <strong>"Deploy site"</strong></li>
+        </ol>
+        <p class="success">✅ Your site will be live in 1-2 minutes!</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 5: Customize Your Site</h2>
+        <ol>
+            <li>Click <strong>"Site settings"</strong> in Netlify dashboard</li>
+            <li>Go to <strong>"Domain management"</strong></li>
+            <li>Click <strong>"Options"</strong> → <strong>"Edit site name"</strong></li>
+            <li>Choose a name like <code>Robot Banao-bd</code></li>
+            <li>Your site will be at: <code>Robot Banao-bd.netlify.app</code></li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 6: Update Contact Information</h2>
+        <p>Before going live, update these in <code>index.html</code>:</p>
+        <ul>
+            <li>Phone number: Search for <code>+880 1XXX-XXXXXX</code></li>
+            <li>Email: Search for <code>info@Robot Banaobd.com</code></li>
+        </ul>
+        <p>Then commit and push changes:</p>
+        <div class="cmd">git add .</div>
+        <div class="cmd">git commit -m "Update contact information"</div>
+        <div class="cmd">git push</div>
+        <p class="success">✅ Netlify will automatically redeploy!</p>
+    </div>
+
+    <div class="step">
+        <h2>Optional: Custom Domain</h2>
+        <p>To use your own domain (e.g., Robot Banaobd.com):</p>
+        <ol>
+            <li>Buy a domain from Namecheap, GoDaddy, etc.</li>
+            <li>In Netlify: Site settings → Domain management → Add custom domain</li>
+            <li>Follow the DNS configuration instructions</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Optional: Email Notifications</h2>
+        <p>To receive emails when someone places an order:</p>
+        <ol>
+            <li>Sign up for <a href="https://sendgrid.com" target="_blank">SendGrid</a> (free tier: 100 emails/day)</li>
+            <li>Get your API key</li>
+            <li>In Netlify: Site settings → Environment variables</li>
+            <li>Add: <code>SENDGRID_API_KEY</code> = your_api_key</li>
+            <li>Update the function code (see README.md)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>📊 View Orders</h2>
+        <p>To see orders placed on your site:</p>
+        <ol>
+            <li>Go to Netlify dashboard</li>
+            <li>Click on <strong>"Functions"</strong></li>
+            <li>Click on <strong>"submit-order"</strong></li>
+            <li>View the logs to see all orders</li>
+        </ol>
+        <p class="warning">💡 For production, integrate with a database (Airtable, Google Sheets, Firebase)</p>
+    </div>
+
+    <div class="step">
+        <h2>🎉 You're Done!</h2>
+        <p class="success">Your robotics shop is now live and ready to accept orders!</p>
+        <p>Share your site link with customers and start selling! 🤖</p>
+    </div>
+
+    <hr style="margin: 40px 0; border-color: rgba(0, 240, 255, 0.3);">
+    
+    <h2>Quick Links</h2>
+    <ul>
+        <li><a href="https://docs.netlify.com" target="_blank">Netlify Documentation</a></li>
+        <li><a href="https://www.netlify.com/pricing/" target="_blank">Netlify Pricing</a> (Free tier is generous!)</li>
+        <li><a href="https://sendgrid.com/pricing/" target="_blank">SendGrid Pricing</a></li>
+        <li><a href="index.html">View Your Site Locally</a></li>
+    </ul>
+
+    <h2>Need Help?</h2>
+    <p>Check the <code>README.md</code> file for more detailed customization options.</p>
+</body>
+</html>
